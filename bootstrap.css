@@ -6819,7 +6819,11 @@ button.close {
 }
 
 
-
+/* Tools */
+.picLeft{
+	float : right;
+	margin-right : 20px;
+}
 
 
 
