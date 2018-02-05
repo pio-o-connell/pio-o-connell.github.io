@@ -9,12 +9,44 @@
   <meta name="author" content="Pio O'Connell">
   <title>Portfolio</title>
   <link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="menu.css">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+   <script>
+ function myFunction() {
+     var x = document.getElementById("myTopnav");
+     if (x.className === "topnav") {
+         x.className += " responsive";
+     } else {
+         x.className = "topnav";
+     }
+ }
+ </script>
+
+
+
+
 </head>
 <!--<body> -->
  <!-- <body style="font-family:'Calibri'"> -->
 
 <body id="top" style="font-family:'Calibri'">
+     <!-- menu -->
+  <div class="topnav" id="myTopnav">
+    <a href="#home" class="active">Home</a>
+    <a href="#portfolio">Graphic Design</a>
+    <a href="https://github.com/pio-o-connell/" target="_blank" >Code</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Work Experience</a>
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+  <!--
+  <div style="padding-left:16px">
+    <h2>Responsive Topnav Example</h2>
+    <p>Resize the browser window to see how it works.</p>
+  </div>
+  -->
+
   <div class="container col-xs-offset-1">
     <hr>
     <div class="row ">
