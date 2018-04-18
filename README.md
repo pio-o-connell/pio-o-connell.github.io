@@ -38,14 +38,17 @@
   1. CopyHTML
 
    -will be using gulp.src() and gulp.dest() using gulp commands
+
   2. Minify to optimise image
         ```
         npm install -save
         npm install --save-dev gulp-imagemin
         const gulp = require('gulp');
         const imagemin = require('gulp-imagemin');
+
         ```
   3. Minify js // reduced whitespace
+
 
   4. use Uglify // javascript parser
         ```
