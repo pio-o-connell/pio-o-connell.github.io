@@ -165,38 +165,6 @@
 ```javascript
     gulp.task('default', ['serve','message','copyHTML','imageMin','sass','scripts']);
 ```
-    ///
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 3. Install ruby and ruby gems
