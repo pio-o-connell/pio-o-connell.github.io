@@ -47,25 +47,22 @@
         const imagemin = require('gulp-imagemin');
 
         ```
-  3. Minify js // reduced whitespace
-
-
-  4. use Uglify // javascript parser
+  3. Minify js using uglify  javascript parser
         ```
         npm install --save-dev gulp-uglify
         ```
 
-  5. Gulp sass_starter_pack
+  4. Gulp sass_starter_pack
       ```
       npm install --save-dev gulp-sass
       ```
 
-  6. concatenate files // group files together
+  5. concatenate files // group files together
   ```
       npm install --save-dev gulp-concat
   ```
 
-  7. browsersyn // instant updated on browser on save()
+  6. browsersyn // instant updated on browser on save()
   ```
     npm install -g browser-sync
   ```
