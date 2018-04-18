@@ -73,7 +73,8 @@
     + [Install SASS using Gulp engine](https://www.youtube.com/watch?v=rmXVmfx3rNo "Brad Traversy")
 
 
-````javascript
+### Minimal Setup
+```javascript
     const gulp = require('gulp.js');
     const browserSync = require('browser-sync').create();
     const imageMin=require('gulp-imagemin');
@@ -84,22 +85,26 @@
     gulp.task('message' ,function(){
       return console.log('Gulp is running...');
     });
-````
-    // to invoke  from console gulp message
-    // gulp.task define tasks
-    //gulp.src points to files to use
-    //gulp.dest point to folder to outpuf
-    //gulp.watch watch files and folders for changes
+```
 
-    ///Compile SASS
+### To automate common web tasks
+```javascript
+    -  gulp.task()      # define tasks
+    -  gulp.src()       # points to files to use
+    -  gulp.dest()     # point to folder to outpuf
+    -  gulp.watch()  # watch files and folders for changes
+```
+### Compile SASS
+```javascript
     gulp.task('sass', function(){
       return gulp.src(['src/scss/*.scss'])
         .pipe(sass())
         .pipe(gulp.dest('src/css'))
         .pipe(browserSync.stream());
     });
-    
-    //Watch & Server
+```
+### Watch & Server
+```javascript
     gulp.task('serve',['sass'],function(){
       browserSync.init({
         server: './src'
@@ -107,54 +112,59 @@
       gulp.watch(['src/scss/*.scss'],['sass']);
       gulp.watch(['src/scss/*.html']).on('change',browserSync.reload)
     });
+```
+
+### Copy src/.scss files to dest  -- incorrect
+```javascript    
     // to invoke  from console gulp
     gulp.task('default', function(){
       gulp.task('copyHTML', function(){
        gulp.src('src/*.html')
       .pipe(gulp.dest('dest'))
-
     });
+```
 
-
-
-    //minify images
+### Minify images
+```javascript
     gulp.task('imageMin', () =>    // change to Imagemin
     	gulp.src('src/images/*')
     		.pipe(imagemin())
     		.pipe(gulp.dest('dist/images'))
     );
-
-    //minify javasctipy using uglify
+```
+### Minify javascript using uglify
+```javascript
     gulp.task('Minify', function(){
        gulp.src(['src/js/*.js'])
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
         .pipe(browserSync.stream());
     });
+```
 
-
-    // Compile sass
+### Compile sass
+```javascript
     gulp.task('sass', function(){
        gulp.src('src/sass/*.scss')
         .pipe(sass().)on('error',sass.logerror))
         .pipe(gulp.dest('dist/css'));
     });
-
-    // concatenate files to Main.js
+```
+### Concatenate files to Main.js
+```javascript
     gulp.task('scripts', function(){
        gulp.src('src/js/*.js')
         .pipe(concat('main.js')))
         ..pipe(uglify());   // remove minify from default
         .pipe(gulp.dest('dist/js'));
     });
-
+```
     /
 
-     // gulp.task('minify;') type gulp
-    // Defult task   -- can put ,minify here
-    // remoed minified sctipy beause want to minify concatted files
+### Now replace create default task to invoke all functionality
+```javascript
     gulp.task('default', ['serve','message','copyHTML','imageMin','sass','scripts']);
-
+```
     ///
 
 
