@@ -161,10 +161,38 @@
 ```
     /
 
-### Now replace create default task to invoke all functionality
+### Now  create default task to invoke all functionality- invoked using  from command line
 ```javascript
     gulp.task('default', ['serve','message','copyHTML','imageMin','sass','scripts']);
 ```
 
 
 3. Install ruby and ruby gems
+[Correct install for Ruby](https://rubyinstaller.org/ " Ruby Install")
+      - Ensure to use recommended build
+      - Gems installed as part of Ruby
+      ```javascript
+      ruby -v
+      gem -v
+      ```
+
+4. Install jekyll
+    ```javascript
+                  gem install jekyll bundler
+                  jekyll new Blog_name
+                  cd Blog_name
+                  bundle exec jeykll serve
+      ```
+
+            subsequently
+
+    ```javascript  
+                   jeykll serve
+    ```
+            To view localhost:4000
+      ```javascript
+                  jeykyll serve pm port 4000
+      ```
+
+
+config.yml files
