@@ -1,4 +1,4 @@
-
+///
 # Setup for personal website
 1. Install node.js
 2. Install Gulp engine
@@ -15,7 +15,7 @@
         + Development  servers( web server plug-in to run on development server)
 
 ## To install Gulp        
-+  [Brad Traversy Gulp Crash Course]""(https://github.com/bradtraversy/sass_starter_pack " Brad Traversy")
++  [Brad Traversy Gulp Crash Course](https://github.com/bradtraversy/sass_starter_pack " Brad Traversy")
 
   ```
         npm install -g gulp
@@ -86,6 +86,7 @@
       return console.log('Gulp is running...');
     });
 ```
+..placeholder gulpFile
 
 ### To automate common web tasks
 ```javascript
@@ -181,7 +182,7 @@
                   gem install jekyll bundler
                   jekyll new Blog_name
                   cd Blog_name
-                  bundle exec jeykll serve
+                  bundle exec jekyll serve
       ```
 
             subsequently
@@ -195,4 +196,53 @@
       ```
 
 
-config.yml files
+placeholder : config.yml files
+
+
+# Travis Setup
+  *Requirements*
+
+            (with help from ShakyShane Framework)
+  - jekyll
+  - Jade
+  - Sass
+  - Autoprefixer
+  - BrowserSync
+
+
+
+  You can easily deploy your site build to a gh-pages branch.
+  First, follow the instructions at gulp-gh-pages to get your
+  branch prepared for the deployment and to install the module.
+  Then, in gulpfile.js you'll want to include something like the code
+  below-
+
+```javascript
+  var deploy = require("gulp-gh-pages")
+
+  gulp.task("deploy", ["jekyll-build"], function () {
+                return gulp.src("./_site/**/*")
+                    .pipe(deploy());
+            });
+```
+If you change the destination in your _config.yml file, be sure to reflect that in your gulpfile.
+gulp.src() needs to be the path to your final site folder, which by default will be _site.
+
+1.  Use partials i.e. only _includes directories, then index.html will read like-
+```
+{% include about.html%}
+```
+Jade
+
+
+
+
+
+
+
+
+
+
+ References
+  + [Maximilian Schmidt](  https://www.youtube.com/watch?v=DkRoa2LooNM "Intro Gulp Build Automated Process")
+  +  [DevTips Setup]( https://www.youtube.com/watch?v=nY4kQssg3lw&t=305s " Travis Neilson Project Setup")
