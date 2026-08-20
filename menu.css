@@ -112,3 +112,33 @@ body {
   font-weight: 600;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
 }
+
+/* Keep Skill Set progress bar contents left-aligned and allow wrapping. */
+
+/* #skillset .progress-bar {
+
+  width: 100%;
+
+  text-align: left;
+
+  padding: 5px 10px;
+
+  white-space: normal;
+
+  height: auto;
+
+  line-height: 20px;
+
+} */
+
+#skillset .progress-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px 10px 10px 10px;
+  white-space: normal;
+  height: auto;
+  line-height: 20px;
+  text-align: left;
+}
