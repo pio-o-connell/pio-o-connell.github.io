@@ -35,6 +35,15 @@ body {
   display: none;
 }
 
+/* disable logo as menu item */
+.topnav a.disabled-menu {
+    pointer-events: none;
+    cursor: default;
+}
+
+
+
+
 /* Keep credential badges horizontally aligned at all viewport sizes. */
 #courses {
   display: flex;
