@@ -3,4 +3,4 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
 
 
-Can you create 3 favicon images 180x180,32x32,16x16 and labe; the files 
+Can you create 3 favicon images 180x180,32x32,16x16 and label the files 
