@@ -118,7 +118,9 @@ body {
 @media screen and (max-width: 767px) {
 
     .topnav.responsive {
-        position: relative;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
     }
 
     .topnav.responsive .icon {
@@ -380,4 +382,3 @@ body {
 
    No carousel CSS is required here.
    ========================================================= */
-
