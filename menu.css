@@ -1,38 +1,37 @@
 /* menu for portfolio */
+
 body {
-  margin:0;
+    margin: 0;
 }
 
 .topnav {
-  overflow: hidden;
-  width: 100%;
-  background-color: #4CAF50;  /* green */
-
+    overflow: hidden;
+    width: 100%;
+    background-color: #4CAF50; /* green */
 }
 
 .topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;  /* off white */
-  text-align: center;
-  padding: 10px 10px 15px 10px;
-  text-decoration: none;
-  font-size: 17px;
+    float: left;
+    display: block;
+    color: #f2f2f2; /* off white */
+    text-align: center;
+    padding: 10px 10px 15px 10px;
+    text-decoration: none;
+    font-size: 17px;
 }
 
 .topnav a:hover {
- background-color: #292775; /* grey */
- color: #ddd;
+    background-color: #292775; /* grey */
+    color: #ddd;
 }
 
 .active {
- background-color: #292775;  /* green */
-  color: white;
-
+    background-color: #292775; /* green */
+    color: white;
 }
 
 .topnav .icon {
-  display: none;
+    display: none;
 }
 
 /* disable logo as menu item */
@@ -42,112 +41,337 @@ body {
 }
 
 
+/* =========================================================
+   CREDENTIAL BADGES
+   Keep credential badges horizontally aligned
+   ========================================================= */
 
-
-/* Keep credential badges horizontally aligned at all viewport sizes. */
 #courses {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
 }
 
 #courses a {
-  display: block;
-  flex: 0 1 56px;
-  min-width: 0;
+    display: block;
+    flex: 0 1 56px;
+    min-width: 0;
 }
 
 #courses img {
-  display: block;
-  width: 100%;
-  max-width: 56px;
-  height: auto;
+    display: block;
+    width: 100%;
+    max-width: 56px;
+    height: auto;
 }
 
-/* Keep contact and social icons horizontally aligned at all viewport sizes. */
+
+/* =========================================================
+   CONTACT / SOCIAL ICONS
+   Keep contact and social icons horizontally aligned
+   ========================================================= */
+
 #contacts {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
 }
 
 #contacts a {
-  display: block;
-  flex: 0 0 auto;
+    display: block;
+    flex: 0 0 auto;
 }
 
 #contacts img {
-  display: block;
-  width: auto;
-  height: 22px;
+    display: block;
+    width: auto;
+    height: 22px;
 }
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
 
 @media screen and (max-width: 767px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
+
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
 }
+
 
 @media screen and (max-width: 767px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .label {
-    white-space: normal;
-    display: inline-block;
-    max-width: 100%;
-  }
 
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .label {
+        white-space: normal;
+        display: inline-block;
+        max-width: 100%;
+    }
 }
 
-/* Improve progress bar contrast while keeping the same green theme. */
+
+/* =========================================================
+   PROGRESS BARS
+   ========================================================= */
+
 .progress-bar.progress-bar-success {
-  background-color: #3f9b3f;
-  color: #ffffff;
-  font-weight: 600;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+    background-color: #3f9b3f;
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
 }
 
-/* Keep Skill Set progress bar contents left-aligned and allow wrapping. */
 
-/* #skillset .progress-bar {
-
-  width: 100%;
-
-  text-align: left;
-
-  padding: 5px 10px;
-
-  white-space: normal;
-
-  height: auto;
-
-  line-height: 20px;
-
-} */
+/* Keep Skill Set progress bar contents left-aligned
+   and allow wrapping. */
 
 #skillset .progress-bar {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0px 10px 10px 10px;
-  white-space: normal;
-  height: auto;
-  line-height: 20px;
-  text-align: left;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 10px 10px 10px;
+    white-space: normal;
+    height: auto;
+    line-height: 20px;
+    text-align: left;
 }
+
+
+/* =========================================================
+   CUSTOM CAROUSELS
+   Tablet / Desktop only
+   ========================================================= */
+
+/*
+   The carousel occupies the available width of the
+   portfolio container.
+
+   Each image is positioned absolutely so that two images
+   can slide past one another.
+
+   Images are centred horizontally and vertically.
+*/
+
+.custom-carousel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    margin: 0 auto;
+    background: transparent;
+}
+
+
+/* Container holding the carousel images */
+
+.custom-carousel-images {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+/* Individual carousel images */
+
+.carousel-image {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+
+    display: none;
+
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+
+    /*
+       The image centre is positioned at the
+       carousel centre.
+    */
+    transform: translate(-50%, -50%);
+
+    margin: 0;
+}
+
+
+/*
+   Active/visible image.
+
+   JavaScript positions the active image at left: 50%.
+*/
+
+.carousel-image.active {
+    display: block;
+    left: 50%;
+}
+
+
+/* =========================================================
+   CAROUSEL CONTROLS
+   ========================================================= */
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    z-index: 10;
+
+    width: 45px;
+    height: 60px;
+
+    border: none;
+    outline: none;
+
+    background-color: rgba(0, 0, 0, 0.35);
+
+    color: #ffffff;
+
+    font-size: 30px;
+    line-height: 60px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    padding: 0;
+}
+
+
+/* Previous button */
+
+.carousel-prev {
+    left: 10px;
+}
+
+
+/* Next button */
+
+.carousel-next {
+    right: 10px;
+}
+
+
+/* Hover state */
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: rgba(41, 39, 117, 0.85);
+    color: #ffffff;
+}
+
+
+/* Keyboard focus */
+
+.carousel-prev:focus,
+.carousel-next:focus {
+    outline: none;
+}
+
+
+/* =========================================================
+   ARTWORK CAROUSEL
+   ========================================================= */
+
+#artwork-carousel {
+    height: 500px;
+}
+
+
+/* =========================================================
+   WEBSITE GRAPHICS CAROUSEL
+   ========================================================= */
+
+#graphics-carousel {
+    height: 400px;
+}
+
+
+/* =========================================================
+   TABLET / DESKTOP CAROUSEL IMAGE SIZING
+   ========================================================= */
+
+@media screen and (min-width: 768px) {
+
+    #artwork-carousel .carousel-image {
+        max-height: 480px;
+        max-width: 90%;
+    }
+
+    #graphics-carousel .carousel-image {
+        max-height: 380px;
+        max-width: 90%;
+    }
+
+}
+
+
+/* =========================================================
+   LARGER DESKTOP SCREENS
+   ========================================================= */
+
+@media screen and (min-width: 992px) {
+
+    #artwork-carousel {
+        height: 550px;
+    }
+
+    #graphics-carousel {
+        height: 420px;
+    }
+
+    #artwork-carousel .carousel-image {
+        max-height: 530px;
+    }
+
+    #graphics-carousel .carousel-image {
+        max-height: 400px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+/*
+   The custom carousels have the Bootstrap "hidden-xs"
+   class, so they are automatically hidden below 768px.
+
+   The "visible-xs" artwork-mobile and graphics-mobile
+   sections are therefore displayed normally as a
+   vertical list on mobile.
+
+   No carousel CSS is required here.
+   ========================================================= */
