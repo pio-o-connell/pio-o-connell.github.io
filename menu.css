@@ -1,3 +1,4 @@
+```css
 /* menu for portfolio */
 
 body {
@@ -39,7 +40,23 @@ body {
     display: none;
 }
 
+
+/* =========================================================
+   STICKY MENU ANCHOR OFFSET
+   Prevents headings from being hidden underneath the
+   sticky navigation when clicking menu links.
+   ========================================================= */
+
+#top,
+#portfolio,
+#education,
+#experience {
+    scroll-margin-top: 60px;
+}
+
+
 /* disable logo as menu item */
+
 .topnav a.disabled-menu {
     pointer-events: none;
     cursor: default;
@@ -179,7 +196,6 @@ body {
 /*
    The carousel occupies the available width of the
    portfolio container.
-
    Each image is positioned absolutely so that two images
    can slide past one another.
 
@@ -212,9 +228,7 @@ body {
     position: absolute;
     top: 50%;
     left: 100%;
-
     display: none;
-
     width: auto;
     max-width: 100%;
     height: auto;
@@ -224,15 +238,14 @@ body {
        The image centre is positioned at the
        carousel centre.
     */
-    transform: translate(-50%, -50%);
 
+    transform: translate(-50%, -50%);
     margin: 0;
 }
 
 
 /*
    Active/visible image.
-
    JavaScript positions the active image at left: 50%.
 */
 
@@ -249,29 +262,19 @@ body {
 .carousel-prev,
 .carousel-next {
     position: absolute;
-
     top: 50%;
     transform: translateY(-50%);
-
     z-index: 10;
-
     width: 45px;
     height: 60px;
-
     border: none;
     outline: none;
-
     background-color: rgba(0, 0, 0, 0.35);
-
     color: #ffffff;
-
     font-size: 30px;
     line-height: 60px;
-
     text-align: center;
-
     cursor: pointer;
-
     padding: 0;
 }
 
@@ -340,7 +343,6 @@ body {
         max-height: 380px;
         max-width: 90%;
     }
-
 }
 
 
