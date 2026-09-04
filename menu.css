@@ -383,3 +383,37 @@ body {
 
    No carousel CSS is required here.
    ========================================================= */
+
+   /* =========================================================
+   HORIZONTAL STRETCH CLASSES
+   (Mobile stacked images + optional carousel use)
+   ========================================================= */
+
+.stretch-20 { transform: scaleX(1.2); }
+.stretch-30 { transform: scaleX(1.3); }
+.stretch-40 { transform: scaleX(1.4); }
+.stretch-60 { transform: scaleX(1.6); }
+
+
+/* Combined versions for carousel images
+   (preserves the existing translate centering) */
+
+#artwork-carousel .carousel-image.stretch-20,
+#graphics-carousel .carousel-image.stretch-20 {
+    transform: translate(-50%, -50%) scaleX(1.2);
+}
+
+#artwork-carousel .carousel-image.stretch-30,
+#graphics-carousel .carousel-image.stretch-30 {
+    transform: translate(-50%, -50%) scaleX(1.3);
+}
+
+#artwork-carousel .carousel-image.stretch-40,
+#graphics-carousel .carousel-image.stretch-40 {
+    transform: translate(-50%, -50%) scaleX(1.4);
+}
+
+#artwork-carousel .carousel-image.stretch-60,
+#graphics-carousel .carousel-image.stretch-60 {
+    transform: translate(-50%, -50%) scaleX(1.6);
+}
