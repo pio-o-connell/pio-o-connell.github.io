@@ -441,3 +441,146 @@ body {
 .image-frame.stretch-30 img { transform: scaleX(1.3); }
 .image-frame.stretch-40 img { transform: scaleX(1.4); }
 .image-frame.stretch-60 img { transform: scaleX(1.6); }
+
+/* =========================================================
+   PREVIOUS PROJECTS - HARMONIA
+   ========================================================= */
+
+#harmonia {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px 30px;
+    margin: 25px 0;
+    line-height: 1.6;
+}
+
+
+/* Harmonia project icon */
+
+.harmonia-icon {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 15px;
+}
+
+
+#harmonia p {
+    margin: 0 0 15px 0;
+}
+
+
+#harmonia ul {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding-left: 25px;
+}
+
+
+#harmonia li {
+    margin-bottom: 8px;
+}
+
+
+#harmonia h3 {
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
+
+
+#harmonia details {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #d0d0d0;
+}
+
+
+#harmonia summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px 0;
+}
+
+
+#harmonia details img {
+    margin: 3px;
+    vertical-align: middle;
+}
+
+
+#harmonia a {
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   HARMONIA RESPONSIVE ICON
+   ========================================================= */
+
+@media screen and (max-width: 767px) {
+
+    #harmonia {
+        padding: 20px;
+    }
+
+    .harmonia-icon {
+        content: url("Images/previous-projects/Harmonia/part-two/favicons/android-chrome-192x192.png");
+    }
+}
+
+
+/* Tablet */
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+
+    .harmonia-icon {
+        content: url("Images/previous-projects/Harmonia/part-two/favicons/android-chrome-512x512.png");
+    }
+}
+
+
+/* Desktop */
+
+@media screen and (min-width: 1200px) {
+
+    .harmonia-icon {
+        content: url("Images/previous-projects/Harmonia/part-two/favicons/android-chrome-512x512.png");
+    }
+}
+
+
+/* =========================================================
+   PREVIOUS PROJECTS ANCHOR OFFSET
+   ========================================================= */
+
+#previous-projects {
+    scroll-margin-top: 60px;
+}
+
+
+/* ========================================= */
+/* TECHNICAL DETAILS ARROW                   */
+/* ========================================= */
+
+#harmonia summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px 0;
+    list-style: none;
+}
+
+#harmonia summary::-webkit-details-marker {
+    display: none;
+}
+
+.details-arrow {
+    display: inline-block;
+    margin-right: 8px;
+    transition: transform 0.2s ease;
+}
+
+#harmonia details[open] .details-arrow {
+    transform: rotate(90deg);
+}
