@@ -384,15 +384,27 @@ body {
    No carousel CSS is required here.
    ========================================================= */
 
-   /* =========================================================
+
+/* =========================================================
    HORIZONTAL STRETCH CLASSES
    (Mobile stacked images + optional carousel use)
    ========================================================= */
 
-.stretch-20 { transform: scaleX(1.2); }
-.stretch-30 { transform: scaleX(1.3); }
-.stretch-40 { transform: scaleX(1.4); }
-.stretch-60 { transform: scaleX(1.6); }
+.stretch-20 {
+    transform: scaleX(1.2);
+}
+
+.stretch-30 {
+    transform: scaleX(1.3);
+}
+
+.stretch-40 {
+    transform: scaleX(1.4);
+}
+
+.stretch-60 {
+    transform: scaleX(1.6);
+}
 
 
 /* Combined versions for carousel images
@@ -418,15 +430,16 @@ body {
     transform: translate(-50%, -50%) scaleX(1.6);
 }
 
+
 /* =========================================================
    FIXED FRAME + HORIZONTAL STRETCH + CROP (Mobile)
    ========================================================= */
 
 .image-frame {
-    width: 300px;          /* change to 360px if you prefer */
+    width: 300px;
     height: 200px;
-    overflow: hidden;      /* crops the stretched image */
-    margin: 0 auto;        /* centres the frame */
+    overflow: hidden;
+    margin: 0 auto;
 }
 
 .image-frame img {
@@ -436,19 +449,33 @@ body {
     display: block;
 }
 
+
 /* Stretch amounts */
-.image-frame.stretch-20 img { transform: scaleX(1.2); }
-.image-frame.stretch-30 img { transform: scaleX(1.3); }
-.image-frame.stretch-40 img { transform: scaleX(1.4); }
-.image-frame.stretch-60 img { transform: scaleX(1.6); }
+
+.image-frame.stretch-20 img {
+    transform: scaleX(1.2);
+}
+
+.image-frame.stretch-30 img {
+    transform: scaleX(1.3);
+}
+
+.image-frame.stretch-40 img {
+    transform: scaleX(1.4);
+}
+
+.image-frame.stretch-60 img {
+    transform: scaleX(1.6);
+}
 
 
 /* =========================================================
-   PREVIOUS PROJECTS - HARMONIA + GEOCOMPARE
+   PREVIOUS PROJECTS - HARMONIA + GEOCOMPARE + RETURNINGRACER
    ========================================================= */
 
 #harmonia,
-#geocompare {
+#geocompare,
+#returning-racer {
     background-color: #f5f5f5;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -463,7 +490,8 @@ body {
    ========================================================= */
 
 .harmonia-icon,
-.geocompare-icon {
+.geocompare-icon,
+.returning-racer-icon {
     width: 50px;
     height: 50px;
     object-fit: contain;
@@ -477,13 +505,15 @@ body {
    ========================================================= */
 
 #harmonia p,
-#geocompare p {
+#geocompare p,
+#returning-racer p {
     margin: 0 0 15px 0;
 }
 
 
 #harmonia ul,
-#geocompare ul {
+#geocompare ul,
+#returning-racer ul {
     margin-top: 5px;
     margin-bottom: 20px;
     padding-left: 25px;
@@ -491,20 +521,23 @@ body {
 
 
 #harmonia li,
-#geocompare li {
+#geocompare li,
+#returning-racer li {
     margin-bottom: 8px;
 }
 
 
 #harmonia h3,
-#geocompare h3 {
+#geocompare h3,
+#returning-racer h3 {
     margin-top: 25px;
     margin-bottom: 12px;
 }
 
 
 #harmonia details,
-#geocompare details {
+#geocompare details,
+#returning-racer details {
     margin-top: 20px;
     padding-top: 15px;
     border-top: 1px solid #d0d0d0;
@@ -512,7 +545,8 @@ body {
 
 
 #harmonia summary,
-#geocompare summary {
+#geocompare summary,
+#returning-racer summary {
     cursor: pointer;
     font-weight: bold;
     padding: 5px 0;
@@ -521,14 +555,16 @@ body {
 
 
 #harmonia details img,
-#geocompare details img {
+#geocompare details img,
+#returning-racer details img {
     margin: 3px;
     vertical-align: middle;
 }
 
 
 #harmonia a,
-#geocompare a {
+#geocompare a,
+#returning-racer a {
     font-weight: 600;
 }
 
@@ -540,7 +576,8 @@ body {
 @media screen and (max-width: 767px) {
 
     #harmonia,
-    #geocompare {
+    #geocompare,
+    #returning-racer {
         padding: 20px;
     }
 
@@ -553,10 +590,18 @@ body {
     .geocompare-icon {
         content: url("Images/previous-projects/GeoCompare/favicons/android-chrome-192x192.png");
     }
+
+
+    .returning-racer-icon {
+        content: url("Images/previous-projects/ReturningRacer/favicons/180x180.png");
+    }
+
 }
 
 
-/* Tablet */
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
 
@@ -568,10 +613,16 @@ body {
     .geocompare-icon {
         content: url("Images/previous-projects/GeoCompare/favicons/android-chrome-512x512.png");
     }
+    .returning-racer-icon {
+        content: url("Images/previous-projects/ReturningRacer/favicons/180x180.png");
+    }
+
 }
 
 
-/* Desktop */
+/* =========================================================
+   DESKTOP
+   ========================================================= */
 
 @media screen and (min-width: 1200px) {
 
@@ -583,6 +634,12 @@ body {
     .geocompare-icon {
         content: url("Images/previous-projects/GeoCompare/favicons/android-chrome-512x512.png");
     }
+
+
+    .returning-racer-icon {
+        content: url("Images/previous-projects/ReturningRacer/favicons/original.png");
+    }
+
 }
 
 
@@ -591,24 +648,27 @@ body {
    ========================================================= */
 
 #previous-projects,
+#harmonia,
 #geocompare,
-#harmonia {
+#returning-racer {
     scroll-margin-top: 60px;
 }
 
 
-/* ========================================= */
-/* TECHNICAL DETAILS ARROW                   */
-/* ========================================= */
+/* =========================================================
+   TECHNICAL DETAILS ARROW
+   ========================================================= */
 
 #harmonia summary::-webkit-details-marker,
-#geocompare summary::-webkit-details-marker {
+#geocompare summary::-webkit-details-marker,
+#returning-racer summary::-webkit-details-marker {
     display: none;
 }
 
 
 #harmonia .details-arrow,
-#geocompare .details-arrow {
+#geocompare .details-arrow,
+#returning-racer .details-arrow {
     display: inline-block;
     margin-right: 8px;
     transition: transform 0.2s ease;
@@ -616,6 +676,7 @@ body {
 
 
 #harmonia details[open] .details-arrow,
-#geocompare details[open] .details-arrow {
+#geocompare details[open] .details-arrow,
+#returning-racer details[open] .details-arrow {
     transform: rotate(90deg);
 }
