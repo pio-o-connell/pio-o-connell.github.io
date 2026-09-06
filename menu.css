@@ -442,11 +442,13 @@ body {
 .image-frame.stretch-40 img { transform: scaleX(1.4); }
 .image-frame.stretch-60 img { transform: scaleX(1.6); }
 
+
 /* =========================================================
-   PREVIOUS PROJECTS - HARMONIA
+   PREVIOUS PROJECTS - HARMONIA + GEOCOMPARE
    ========================================================= */
 
-#harmonia {
+#harmonia,
+#geocompare {
     background-color: #f5f5f5;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -456,9 +458,12 @@ body {
 }
 
 
-/* Harmonia project icon */
+/* =========================================================
+   PROJECT ICONS
+   ========================================================= */
 
-.harmonia-icon {
+.harmonia-icon,
+.geocompare-icon {
     width: 50px;
     height: 50px;
     object-fit: contain;
@@ -467,66 +472,86 @@ body {
 }
 
 
-#harmonia p {
+/* =========================================================
+   PROJECT CONTENT
+   ========================================================= */
+
+#harmonia p,
+#geocompare p {
     margin: 0 0 15px 0;
 }
 
 
-#harmonia ul {
+#harmonia ul,
+#geocompare ul {
     margin-top: 5px;
     margin-bottom: 20px;
     padding-left: 25px;
 }
 
 
-#harmonia li {
+#harmonia li,
+#geocompare li {
     margin-bottom: 8px;
 }
 
 
-#harmonia h3 {
+#harmonia h3,
+#geocompare h3 {
     margin-top: 25px;
     margin-bottom: 12px;
 }
 
 
-#harmonia details {
+#harmonia details,
+#geocompare details {
     margin-top: 20px;
     padding-top: 15px;
     border-top: 1px solid #d0d0d0;
 }
 
 
-#harmonia summary {
+#harmonia summary,
+#geocompare summary {
     cursor: pointer;
     font-weight: bold;
     padding: 5px 0;
+    list-style: none;
 }
 
 
-#harmonia details img {
+#harmonia details img,
+#geocompare details img {
     margin: 3px;
     vertical-align: middle;
 }
 
 
-#harmonia a {
+#harmonia a,
+#geocompare a {
     font-weight: 600;
 }
 
 
 /* =========================================================
-   HARMONIA RESPONSIVE ICON
+   RESPONSIVE PROJECT ICONS
    ========================================================= */
 
 @media screen and (max-width: 767px) {
 
-    #harmonia {
+    #harmonia,
+    #geocompare {
         padding: 20px;
     }
 
+
     .harmonia-icon {
         content: url("Images/previous-projects/Harmonia/part-two/favicons/android-chrome-192x192.png");
+    }
+
+
+    .geocompare-icon {
+        content: url("Images/previous-projects/GeoCompare/favicons/android-chrome-192x192.png");
     }
 }
 
@@ -538,6 +563,11 @@ body {
     .harmonia-icon {
         content: url("Images/previous-projects/Harmonia/part-two/favicons/android-chrome-512x512.png");
     }
+
+
+    .geocompare-icon {
+        content: url("Images/previous-projects/GeoCompare/favicons/android-chrome-512x512.png");
+    }
 }
 
 
@@ -548,6 +578,11 @@ body {
     .harmonia-icon {
         content: url("Images/previous-projects/Harmonia/part-two/favicons/android-chrome-512x512.png");
     }
+
+
+    .geocompare-icon {
+        content: url("Images/previous-projects/GeoCompare/favicons/android-chrome-512x512.png");
+    }
 }
 
 
@@ -555,7 +590,9 @@ body {
    PREVIOUS PROJECTS ANCHOR OFFSET
    ========================================================= */
 
-#previous-projects {
+#previous-projects,
+#geocompare,
+#harmonia {
     scroll-margin-top: 60px;
 }
 
@@ -564,23 +601,21 @@ body {
 /* TECHNICAL DETAILS ARROW                   */
 /* ========================================= */
 
-#harmonia summary {
-    cursor: pointer;
-    font-weight: bold;
-    padding: 5px 0;
-    list-style: none;
-}
-
-#harmonia summary::-webkit-details-marker {
+#harmonia summary::-webkit-details-marker,
+#geocompare summary::-webkit-details-marker {
     display: none;
 }
 
-.details-arrow {
+
+#harmonia .details-arrow,
+#geocompare .details-arrow {
     display: inline-block;
     margin-right: 8px;
     transition: transform 0.2s ease;
 }
 
-#harmonia details[open] .details-arrow {
+
+#harmonia details[open] .details-arrow,
+#geocompare details[open] .details-arrow {
     transform: rotate(90deg);
 }
