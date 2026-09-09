@@ -489,7 +489,7 @@ body {
    PROJECT ICONS
    ========================================================= */
 
-.harmonia-icon,
+/*.harmonia-icon,
 .geocompare-icon,
 .returning-racer-icon {
     width: 50px;
@@ -497,8 +497,17 @@ body {
     object-fit: contain;
     display: block;
     margin-bottom: 15px;
+}*/
+.harmonia-icon,
+.geocompare-icon,
+.returning-racer-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0px;
 }
-
 
 /* =========================================================
    PROJECT CONTENT
