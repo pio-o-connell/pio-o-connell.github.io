@@ -74,14 +74,35 @@
 					var portfolioLink =
 						document.querySelector(".portfolio-link");
 
+					var previousProjectsMenu =
+						document.querySelector(".previous-projects-menu");
+
+					var previousProjectsLink =
+						document.querySelector(".previous-projects-link");
+
 					if (link === portfolioLink) {
 						event.preventDefault();
 						portfolioMenu.classList.toggle("portfolio-open");
+						previousProjectsMenu.classList.remove(
+							"previous-projects-open"
+						);
+						return;
+					}
+
+					if (link === previousProjectsLink) {
+						event.preventDefault();
+						previousProjectsMenu.classList.toggle(
+							"previous-projects-open"
+						);
+						portfolioMenu.classList.remove("portfolio-open");
 						return;
 					}
 
 					document.getElementById("myTopnav").className = "topnav";
 					portfolioMenu.classList.remove("portfolio-open");
+					previousProjectsMenu.classList.remove(
+						"previous-projects-open"
+					);
 				});
 			});
 		});
@@ -164,9 +185,29 @@
 
 		</div>
 
-		<a href="#previous-projects">
-			Previous Projects
-		</a>
+		<div class="previous-projects-menu">
+
+			<a href="#previous-projects"
+			   class="previous-projects-link">
+				Previous Projects
+				<span class="previous-projects-arrow">▾</span>
+			</a>
+
+			<div class="previous-projects-submenu">
+				<a href="#harmonia">
+					Harmonia
+				</a>
+
+				<a href="#geocompare">
+					GeoCompare
+				</a>
+
+				<a href="#returning-racer">
+					Returning Racer
+				</a>
+			</div>
+
+		</div>
 
 		<a href="https://github.com/pio-o-connell/"
 		target="_blank">

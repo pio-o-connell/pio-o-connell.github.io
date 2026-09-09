@@ -91,6 +91,56 @@ body {
 
 
 /* =========================================================
+   PREVIOUS PROJECTS SUBMENU
+   ========================================================= */
+
+.previous-projects-menu {
+    position: relative;
+    float: left;
+}
+
+.previous-projects-link {
+    display: block;
+}
+
+.previous-projects-arrow {
+    font-size: 13px;
+    margin-left: 4px;
+}
+
+.previous-projects-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background-color: #4CAF50;
+    z-index: 1001;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.previous-projects-submenu a {
+    float: none;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    white-space: nowrap;
+    padding: 10px 15px 12px 15px;
+}
+
+.previous-projects-menu.previous-projects-open
+.previous-projects-submenu {
+    display: block;
+}
+
+.previous-projects-submenu a:hover {
+    background-color: #292775;
+    color: #ddd;
+}
+
+
+/* =========================================================
    STICKY MENU ANCHOR OFFSET
    Prevents headings from being hidden underneath the
    sticky navigation when clicking menu links.
@@ -101,7 +151,11 @@ body {
 #education,
 #experience,
 #graphic-design,
-#website-design
+#website-design,
+#previous-projects,
+#harmonia,
+#geocompare,
+#returning-racer
 {
     scroll-margin-top: 60px;
 }
@@ -213,6 +267,47 @@ body {
     }
 
     .topnav.responsive .portfolio-submenu a {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 10px 10px 10px 30px;
+        box-sizing: border-box;
+    }
+
+    .topnav .previous-projects-menu {
+        display: none;
+        float: none;
+        width: 100%;
+    }
+
+    .topnav.responsive .previous-projects-menu {
+        display: block;
+    }
+
+    .topnav.responsive .previous-projects-menu > .previous-projects-link {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .topnav.responsive .previous-projects-submenu {
+        position: static;
+        display: none;
+        width: 100%;
+        min-width: 0;
+        box-shadow: none;
+        background-color: #3f9b3f;
+    }
+
+    .topnav.responsive
+    .previous-projects-menu.previous-projects-open
+    .previous-projects-submenu {
+        display: block;
+    }
+
+    .topnav.responsive .previous-projects-submenu a {
         float: none;
         display: block;
         width: 100%;
