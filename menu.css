@@ -5,7 +5,8 @@ body {
 }
 
 .topnav {
-    overflow: hidden;
+    overflow: visible;
+    display: flow-root;
     width: 100%;
     background-color: #4CAF50; /* green */
 
@@ -41,6 +42,55 @@ body {
 
 
 /* =========================================================
+   PORTFOLIO SUBMENU
+   ========================================================= */
+
+.portfolio-menu {
+    position: relative;
+    float: left;
+}
+
+.portfolio-link {
+    display: block;
+}
+
+.portfolio-arrow {
+    font-size: 13px;
+    margin-left: 4px;
+}
+
+.portfolio-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background-color: #4CAF50;
+    z-index: 1001;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.portfolio-submenu a {
+    float: none;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    white-space: nowrap;
+    padding: 10px 15px 12px 15px;
+}
+
+.portfolio-menu.portfolio-open .portfolio-submenu {
+    display: block;
+}
+
+.portfolio-submenu a:hover {
+    background-color: #292775;
+    color: #ddd;
+}
+
+
+/* =========================================================
    STICKY MENU ANCHOR OFFSET
    Prevents headings from being hidden underneath the
    sticky navigation when clicking menu links.
@@ -49,7 +99,10 @@ body {
 #top,
 #portfolio,
 #education,
-#experience {
+#experience,
+#graphic-design,
+#website-design
+{
     scroll-margin-top: 60px;
 }
 
@@ -128,6 +181,46 @@ body {
         float: right;
         display: block;
     }
+
+    .topnav .portfolio-menu {
+        display: none;
+        float: none;
+        width: 100%;
+    }
+
+    .topnav.responsive .portfolio-menu {
+        display: block;
+    }
+
+    .topnav.responsive .portfolio-menu > .portfolio-link {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .topnav.responsive .portfolio-submenu {
+        position: static;
+        display: none;
+        width: 100%;
+        min-width: 0;
+        box-shadow: none;
+        background-color: #3f9b3f;
+    }
+
+    .topnav.responsive .portfolio-menu.portfolio-open .portfolio-submenu {
+        display: block;
+    }
+
+    .topnav.responsive .portfolio-submenu a {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 10px 10px 10px 30px;
+        box-sizing: border-box;
+    }
+
 }
 
 

@@ -67,8 +67,21 @@
 			);
 
 			menuLinks.forEach(function (link) {
-				link.addEventListener("click", function () {
+				link.addEventListener("click", function (event) {
+					var portfolioMenu =
+						document.querySelector(".portfolio-menu");
+
+					var portfolioLink =
+						document.querySelector(".portfolio-link");
+
+					if (link === portfolioLink) {
+						event.preventDefault();
+						portfolioMenu.classList.toggle("portfolio-open");
+						return;
+					}
+
 					document.getElementById("myTopnav").className = "topnav";
+					portfolioMenu.classList.remove("portfolio-open");
 				});
 			});
 		});
@@ -131,9 +144,25 @@
 			Work Experience
 		</a>
 
-		<a href="#portfolio">
-			Portfolio
-		</a>
+		<div class="portfolio-menu">
+
+			<a href="#portfolio"
+			   class="portfolio-link">
+				Portfolio
+				<span class="portfolio-arrow">▾</span>
+			</a>
+
+			<div class="portfolio-submenu">
+				<a href="#graphic-design">
+					Graphic Design
+				</a>
+
+				<a href="#website-design">
+					Website Design
+				</a>
+			</div>
+
+		</div>
 
 		<a href="#previous-projects">
 			Previous Projects
@@ -1848,12 +1877,12 @@
 		<!-- GRAPHIC DESIGN PROJECTS                -->
 		<!-- ========================================= -->
 		<br>
-		<h3 class="text-center">
+		<h3 id="graphic-design"
+			class="text-center">
 			<i class="fa fa-paint-brush" aria-hidden="true"></i>
 			Graphic Design Projects
 		</h3>
 		<br>
-
 		<!-- ========================================= -->
 		<!-- ARTWORK - MOBILE                          -->
 		<!-- ========================================= -->
@@ -2018,8 +2047,9 @@
 		<!-- WEBSITE DESIGN PROJECTS                -->
 		<!-- ========================================= -->
 		<br>
-		<h3 class="text-center">
-			<i class="fa fa-desktop"></i>
+		<h3 id="website-design"
+			class="text-center">
+			<i class="fa fa-desktop" aria-hidden="true"></i>
 			Website Design Projects
 		</h3>
 
@@ -2035,8 +2065,7 @@
 
 			<br>
 
-			<h5 id="portfolio" 
-				class="col-xs-offset-1">
+			<h5 class="col-xs-offset-1">
 				<img class="harmonia-icon"
 				src="Images/previous-projects/Harmonia/part-two/favicons/favicon-32x32.png"
 				alt="Harmonia project icon">
@@ -2193,8 +2222,7 @@
 				<hr>
 
 			</div>
-			<h5 id="portfolio"
-				class="col-xs-offset-1">
+			<h5 class="col-xs-offset-1">
 				<img class="geocompare-icon"
 				src="Images/previous-projects/GeoCompare/favicons/favicon-32x32.png"
 				alt="GeoCompare project icon">
@@ -2267,8 +2295,7 @@
 
 			</div>
 
-			<h5 id="portfolio"
-				class="col-xs-offset-1">
+			<h5 class="col-xs-offset-1">
 				<img class="returning-racer-icon"
 				src="Images/previous-projects/ReturningRacer/favicons/32x32.png"
 				alt="Returning Racer project icon">
