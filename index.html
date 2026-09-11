@@ -50,63 +50,143 @@
 	<!-- MOBILE MENU                               -->
 	<!-- ========================================= -->
 
-	<script>
-		function myFunction() {
-			var x = document.getElementById("myTopnav");
+<script>
+	function myFunction() {
+		var x = document.getElementById("myTopnav");
 
-			if (x.className === "topnav") {
-				x.className += " responsive";
-			} else {
-				x.className = "topnav";
-			}
+		if (x.className === "topnav") {
+			x.className += " responsive";
+		} else {
+			x.className = "topnav";
+		}
+	}
+
+	document.addEventListener("DOMContentLoaded", function () {
+		var topnav = document.getElementById("myTopnav");
+		var portfolioMenu = document.querySelector(".portfolio-menu");
+		var previousProjectsMenu = document.querySelector(
+			".previous-projects-menu"
+		);
+
+		function closeMenus() {
+			topnav.className = "topnav";
+			portfolioMenu.classList.remove("portfolio-open");
+			previousProjectsMenu.classList.remove("previous-projects-open");
+			document.querySelectorAll(".submenu-menu").forEach(function (menu) {
+				menu.classList.remove("submenu-open");
+			});
 		}
 
-		document.addEventListener("DOMContentLoaded", function () {
-			var menuLinks = document.querySelectorAll(
-				"#myTopnav a:not(.icon)"
-			);
+		document.querySelectorAll("#myTopnav a:not(.icon)").forEach(function (link) {
+			link.addEventListener("click", function (event) {
+				var submenuMenu = link.closest(".submenu-menu");
+				var isMobile = window.innerWidth < 768;
 
-			menuLinks.forEach(function (link) {
-				link.addEventListener("click", function (event) {
-					var portfolioMenu =
-						document.querySelector(".portfolio-menu");
+				if (link.classList.contains("portfolio-link")) {
+					event.preventDefault();
+					portfolioMenu.classList.toggle("portfolio-open");
+					previousProjectsMenu.classList.remove("previous-projects-open");
+					return;
+				}
 
-					var portfolioLink =
-						document.querySelector(".portfolio-link");
-
-					var previousProjectsMenu =
-						document.querySelector(".previous-projects-menu");
-
-					var previousProjectsLink =
-						document.querySelector(".previous-projects-link");
-
-					if (link === portfolioLink) {
-						event.preventDefault();
-						portfolioMenu.classList.toggle("portfolio-open");
-						previousProjectsMenu.classList.remove(
-							"previous-projects-open"
-						);
-						return;
-					}
-
-					if (link === previousProjectsLink) {
-						event.preventDefault();
-						previousProjectsMenu.classList.toggle(
-							"previous-projects-open"
-						);
-						portfolioMenu.classList.remove("portfolio-open");
-						return;
-					}
-
-					document.getElementById("myTopnav").className = "topnav";
+				if (link.classList.contains("previous-projects-link")) {
+					event.preventDefault();
+					previousProjectsMenu.classList.toggle("previous-projects-open");
 					portfolioMenu.classList.remove("portfolio-open");
-					previousProjectsMenu.classList.remove(
-						"previous-projects-open"
-					);
-				});
+					return;
+				}
+
+				if (link.classList.contains("submenu-link")) {
+					if (window.matchMedia("(max-width: 767px)").matches) {
+						event.preventDefault();
+						submenuMenu.classList.toggle("submenu-open");
+					}
+					return;
+				}
+
+				if (link.dataset.carousel) {
+					event.preventDefault();
+
+					var mobileTargetId = link.dataset.mobileTarget;
+					var carouselId = link.dataset.carousel;
+					var slideClass = link.dataset.slideClass;
+
+					// if (isMobile) {
+
+					// 	var mobileTarget =
+					// 		document.getElementById(mobileTargetId);
+
+					// 	if (!mobileTarget) {
+					// 		return;
+					// 	}
+
+					// 	closeMenus();
+
+					// 	history.replaceState(
+					// 		null,
+					// 		"",
+					// 		"#" + mobileTargetId
+					// 	);
+
+					// 	setTimeout(function () {
+					// 		mobileTarget.scrollIntoView({
+					// 			behavior: "smooth",
+					// 			block: "start"
+					// 		});
+					// 	}, 1000);
+
+					// 	return;
+					// }
+					if (isMobile) {
+
+						var mobileTarget =
+							document.getElementById(mobileTargetId);
+
+						if (!mobileTarget) {
+							return;
+						}
+
+						closeMenus();
+
+						mobileTarget.style.scrollMarginTop = "60px";
+
+					
+						mobileTarget.scrollIntoView({
+							behavior: "smooth",
+							block: "start"
+						});
+
+						return;
+						}
+					closeMenus();
+
+					if (window.selectCarouselSlide) {
+						window.selectCarouselSlide(
+							carouselId,
+							slideClass
+						);
+					}
+
+					var carousel =
+						document.getElementById(carouselId);
+
+					if (carousel) {
+						requestAnimationFrame(function () {
+							carousel.scrollIntoView({
+								behavior: "smooth",
+								block: "start"
+							});
+						});
+					}
+
+					return;
+				}
+
+				closeMenus();
 			});
 		});
-	</script>
+	});
+</script>
 
 	<!-- ========================================= -->
 	<!-- GOOGLE ANALYTICS                          -->
@@ -157,12 +237,16 @@
 				alt="Pio O'Connell">
 		</a>	
 
+		<a href="#top">
+			Home
+		</a>
+
 		<a href="#education">
 			Education
 		</a>
 
 		<a href="#experience">
-			Work Experience
+			Experience
 		</a>
 
 		<div class="portfolio-menu">
@@ -174,13 +258,82 @@
 			</a>
 
 			<div class="portfolio-submenu">
-				<a href="#graphic-design">
-					Graphic Design
-				</a>
 
-				<a href="#website-design">
-					Website Design
-				</a>
+				<div class="submenu-menu">
+
+					<a href="#graphic-design"
+					   class="submenu-link">
+						<i class="fa fa-paint-brush" aria-hidden="true"></i>
+						Graphic Design
+						<span class="submenu-arrow">▾</span>
+					</a>
+
+					<div class="submenu-items">
+
+						<a href="#mobile-magazine-covers"
+						   data-carousel="artwork-carousel"
+						   data-mobile-target="mobile-magazine-covers"
+						   data-slide-class="carousel-magazine-cover">
+							<i class="fa fa-book" aria-hidden="true"></i>
+							Magazine Covers
+						</a>
+<!--    -->
+						<a href="#mobile-logos-branding"
+						   data-carousel="artwork-carousel"
+						   data-mobile-target="mobile-logos-branding"
+						   data-slide-class="carousel-logo-branding">
+							<i class="fa fa-tag" aria-hidden="true"></i>
+							Logos &amp; Branding
+						</a>
+
+						<a href="#mobile-interactive-graphics"
+						   data-carousel="artwork-carousel"
+						   data-mobile-target="mobile-interactive-graphics"
+						   data-slide-class="carousel-interactive-graphics">
+							<i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+							Interactive Graphics
+						</a>
+
+					</div>
+
+				</div>
+
+				<div class="submenu-menu">
+
+					<a href="#website-design"
+					   class="submenu-link">
+						<i class="fa fa-desktop" aria-hidden="true"></i>
+						Website Design
+						<span class="submenu-arrow">▾</span>
+					</a>
+
+					<div class="submenu-items">
+
+						<a href="#mobile-harmonia"
+						   data-carousel="graphics-carousel"
+						   data-mobile-target="mobile-harmonia"
+						   data-slide-class="carousel-image-harmonia">
+							Harmonia
+						</a>
+
+						<a href="#mobile-geocompare"
+						   data-carousel="graphics-carousel"
+						   data-mobile-target="mobile-geocompare"
+						   data-slide-class="carousel-image-geocompare">
+							GeoCompare
+						</a>
+
+						<a href="#mobile-returning-racer"
+						   data-carousel="graphics-carousel"
+						   data-mobile-target="mobile-returning-racer"
+						   data-slide-class="carousel-image-returningracer">
+							Returning Racer
+						</a>
+
+					</div>
+
+				</div>
+
 			</div>
 
 		</div>
@@ -194,6 +347,7 @@
 			</a>
 
 			<div class="previous-projects-submenu">
+
 				<a href="#harmonia">
 					Harmonia
 				</a>
@@ -205,6 +359,7 @@
 				<a href="#returning-racer">
 					Returning Racer
 				</a>
+
 			</div>
 
 		</div>
@@ -1928,150 +2083,62 @@
 		<!-- ARTWORK - MOBILE                          -->
 		<!-- ========================================= -->
 
-		<div id="artwork-mobile"
-			 class="row visible-xs">
+		<div id="artwork-mobile" class="row visible-xs">
 
-			<br>
+			<section id="mobile-magazine-covers" class="mobile-portfolio-section clearfix">
+				<h5 id="magazine-covers-label" class="col-xs-offset-1">
+					<i class="fa fa-book" aria-hidden="true"></i>
+					&nbsp;&nbsp;Magazine Covers
+				</h5>
 
-			<h5 id="magazine-covers" class="col-xs-offset-1">
-				<i class="fa fa-book" aria-hidden="true"></i>
-				&nbsp;&nbsp;Magazine Covers
+				<div class="col-xs-12">
+					<img class="img-responsive center-block" src="MagazineCovers/Project55-300.jpg" alt="" width="300" height="406">
+					<hr>
+				</div>
 
-				<span>
+				<div class="col-xs-12">
+					<img class="img-responsive center-block" src="MagazineCovers/Tourmalet2.jpg" alt="" width="342" height="255">
+					<hr>
+				</div>
+			</section>
 
-					<a href="#top"
-				 	  class="btn btn-secondary-outline btn-sm"
-				 	  role="button">
+			<section id="mobile-logos-branding" class="mobile-portfolio-section clearfix">
+				<h5 id="logos-branding-label" class="col-xs-offset-1">
+					<i class="fa fa-tag" aria-hidden="true"></i>
+					&nbsp;&nbsp;Logos &amp; Branding
+				</h5>
 
-						&uarr;
+				<div class="col-xs-12">
+					<img class="img-responsive center-block" src="Resume/Twitter.jpg" alt="" width="300" height="300">
+					<hr>
+				</div>
 
-					</a>
+				<div class="col-xs-12">
+					<img class="img-responsive center-block" src="Resume/logo2.jpg" alt="" width="300" height="300">
+					<hr>
+				</div>
+			</section>
 
-				</span>
+			<section id="mobile-interactive-graphics" class="mobile-portfolio-section clearfix">
+				<h5 id="interactive-graphics-label" class="col-xs-offset-1">
+					<i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
+					&nbsp;&nbsp;Interactive Graphics
+				</h5>
 
-			</h5>
+				<div class="col-xs-12">
+					<img class="img-responsive center-block" src="Resume/Graphic3.jpg" alt="" width="300" height="200">
+					<hr>
+				</div>
 
-			<div class="col-xs-12">
+				<div class="col-xs-12">
+					<img class="img-responsive center-block" src="Resume/Graphic1.jpg" alt="" width="300" height="200">
+					<hr>
+				</div>
 
-				<img class="img-responsive center-block"
-					 src="MagazineCovers/Project55-300.jpg"
-					 alt=""
-					 width="300"
-					 height="406">
-
-				<hr>
-
-			</div>
-
-
-			<div class="col-xs-12">
-
-				<img class="img-responsive center-block"
-					 src="MagazineCovers/Tourmalet2.jpg"
-					 alt=""
-					 width="342"
-					 height="255">
-
-				<hr>
-
-			</div>
-
-			<h5 id="logos-branding" class="col-xs-offset-1">
-				<i class="fa fa-tag" aria-hidden="true"></i>
-				&nbsp;&nbsp;Logos & Branding
-
-				<span>
-
-					<a href="#top"
-				 	  class="btn btn-secondary-outline btn-sm"
-				 	  role="button">
-
-						&uarr;
-
-					</a>
-
-				</span>
-
-			</h5>
-
-			<div class="col-xs-12">
-
-				<img class="img-responsive center-block"
-					 src="Resume/Twitter.jpg"
-					 alt=""
-					 width="300"
-					 height="300">
-
-				<hr>
-
-			</div>
-
-
-			<div class="col-xs-12">
-
-				<img class="img-responsive center-block"
-					 src="Resume/logo2.jpg"
-					 alt=""
-					 width="300"
-					 height="300">
-
-				<hr>
-
-			</div>
-
-			<h5 id="interactive-graphics" class="col-xs-offset-1">
-				<i class="fa fa-hand-pointer-o" aria-hidden="true"></i>
-				&nbsp;&nbsp;Interactive Graphics
-
-				<span>
-
-					<a href="#top"
-				 	  class="btn btn-secondary-outline btn-sm"
-				 	  role="button">
-
-						&uarr;
-
-					</a>
-
-				</span>
-
-			</h5>
-
-			<div class="col-xs-12">
-
-				<img class="img-responsive center-block"
-					 src="Resume/Graphic3.jpg"
-					 alt=""
-					 width="300"
-					 height="200">
-
-				<hr>
-
-			</div>
-
-
-			<div class="col-xs-12">
-
-				<img class="img-responsive center-block"
-					 src="Resume/Graphic1.jpg"
-					 alt=""
-					 width="300"
-					 height="200">
-
-				<hr>
-
-			</div>
-
-
-			<div class="col-xs-12">
-
-				<img class="img-responsive center-block"
-					 src="Resume/Graphic4.jpg"
-					 alt=""
-					 width="300"
-					 height="200">
-
-			</div>
+				<div class="col-xs-12">
+					<img class="img-responsive center-block" src="Resume/Graphic4.jpg" alt="" width="300" height="200">
+				</div>
+			</section>
 
 		</div>
 
@@ -2083,35 +2150,53 @@
 		<div id="artwork-carousel"
 			 class="custom-carousel hidden-xs">
 
+			<h5 id="artwork-covers-label" class="col-xs-offset-1">
+				<span id="artwork-covers-text"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp; Magazines</span>
+
+				<span>
+
+					<a href="#top"
+				 	  class="btn btn-secondary-outline btn-sm"
+				 	  role="button">
+
+						&uarr;
+
+					</a>
+
+				</span>
+
+			</h5>
+
+
 			<div class="custom-carousel-images">
 
 				<img src="MagazineCovers/Project55-300.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-graphics carousel-magazine-cover">
 
 				<img src="MagazineCovers/Tourmalet2.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-graphics carousel-magazine-cover">
 
 				<img src="Resume/Twitter.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-graphics carousel-logo-branding">
 
 				<img src="Resume/logo2.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-graphics carousel-logo-branding">
 
 				<img src="Resume/Graphic3.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-graphics carousel-interactive-graphics">
 
 				<img src="Resume/Graphic1.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-graphics carousel-interactive-graphics">
 
 				<img src="Resume/Graphic4.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-graphics carousel-interactive-graphics">
 
 			</div>
 
@@ -2160,7 +2245,9 @@
 
 			<br>
 
-			<h5 class="col-xs-offset-1">
+			<section id="mobile-harmonia" class="mobile-portfolio-section clearfix">
+
+			<h5 id="harmonia-label" class="col-xs-offset-1">
 				<img class="harmonia-icon"
 				src="Images/previous-projects/Harmonia/part-two/favicons/favicon-32x32.png"
 				alt="Harmonia project icon">
@@ -2273,7 +2360,7 @@
 			<div class="col-xs-12">
 
 				<img class="img-responsive center-block"
-					 src="Images/previous-projects/Harmonia/part-two/Features/Services-guest.jpg""
+					 src="Images/previous-projects/Harmonia/part-two/Features/Services-guest.jpg"
 					 alt=""
 					 width="300"
 					 height="200">
@@ -2317,7 +2404,11 @@
 				<hr>
 
 			</div>
-			<h5 class="col-xs-offset-1">
+			</section>
+
+			<section id="mobile-geocompare" class="mobile-portfolio-section clearfix">
+
+			<h5 id="geocompare-label" class="col-xs-offset-1">
 				<img class="geocompare-icon"
 				src="Images/previous-projects/GeoCompare/favicons/favicon-32x32.png"
 				alt="GeoCompare project icon">
@@ -2390,7 +2481,11 @@
 
 			</div>
 
-			<h5 class="col-xs-offset-1">
+			</section>
+
+			<section id="mobile-returning-racer" class="mobile-portfolio-section clearfix">
+
+			<h5 id="returning-racer-label" class="col-xs-offset-1">
 				<img class="returning-racer-icon"
 				src="Images/previous-projects/ReturningRacer/favicons/32x32.png"
 				alt="Returning Racer project icon">
@@ -2465,6 +2560,8 @@
 
 			</div>
 
+			</section>
+
 		</div>
 
 
@@ -2475,84 +2572,102 @@
 		<div id="graphics-carousel"
 			 class="custom-carousel hidden-xs">
 
+			<h5 id="website-covers-label" class="col-xs-offset-1">
+				<span id="website-text"><i class="fa fa-book" aria-hidden="true"></i>
+				&nbsp;&nbsp;- Harmonia -</span>
+
+				<span>
+
+					<a href="#top"
+				 	  class="btn btn-secondary-outline btn-sm"
+				 	  role="button">
+
+						&uarr;
+
+					</a>
+
+				</span>
+
+			</h5> 
+
 			<div class="custom-carousel-images">
 				
 				<img src="Images/previous-projects/Harmonia/part-two/Features/HomePage-Part1.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-website carousel-image-harmonia">
 
 
 				<img src="Images/previous-projects/Harmonia/part-two/Features/HomePage-Part2.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-website carousel-image-harmonia">
 
 				<img src="Images/previous-projects/Harmonia/part-two/Features/AdminDashboard-fullscreen.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-website carousel-image-harmonia">
 
 				<img src="Images/previous-projects/Harmonia/part-two/Features/BlogPage-Guest.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-website carousel-image-harmonia">
 					 
 				<img src="Images/previous-projects/Harmonia/part-two/Features/CustomerLogin.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-website carousel-image-harmonia">
 
 				<img src="Images/previous-projects/Harmonia/part-two/Features/BlogPageBlogger.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-website carousel-image-harmonia">
 
 				<img src="Images/previous-projects/Harmonia/part-two/Features/blog-editor.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-website carousel-image-harmonia">
 
 				<img src="Images/previous-projects/Harmonia/part-two/Features/Services-guest.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-website carousel-image-harmonia">
 					 
 				<img src="Images/previous-projects/Harmonia/part-two/Features/Services-Cart-Customer.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-website carousel-image-harmonia">
 
 				<img src="Images/previous-projects/Harmonia/part-two/Features/BookingCustomer.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-website carousel-image-harmonia">
 					 
 				<img src="Images/previous-projects/Harmonia/part-two/Features/BookingCompleteCustomer.jpg"
 					 alt=""
-					 class="carousel-image">
+					 class="carousel-image carousel-website carousel-image-harmonia">
 
 				<img src="Images/previous-projects/GeoCompare/world-quiz-end-quiz.png"
 					 alt=""
-					 class="carousel-image stretch-60">
+					 class="carousel-image carousel-website carousel-image-geocompare stretch-60">
 
 				<img src="Images/previous-projects/GeoCompare/world-quiz-question-answered.png"
 					 alt=""
-					 class="carousel-image stretch-60">
+					 class="carousel-image carousel-website carousel-image-geocompare stretch-60">
 
 				<img src="Images/previous-projects/GeoCompare/world-quiz-currency-1.png"
 					 alt=""
-					 class="carousel-image stretch-60">
+					 class="carousel-image carousel-website carousel-image-geocompare stretch-60">
 
 				<img src="Images/previous-projects/GeoCompare/world-quiz-languages-1.png"
 					 alt=""
-					 class="carousel-image stretch-60">
+					 class="carousel-image carousel-website carousel-image-geocompare stretch-60">
 
 				<img src="Images/previous-projects/ReturningRacer/homecreen-1.png"
 					 alt=""
-					 class="carousel-image stretch-60">
+					 class="carousel-image carousel-website carousel-image-returningracer stretch-60">
 
 				<img src="Images/previous-projects/ReturningRacer/urban-novice-noscroll-1.png"
 					 alt=""
-					 class="carousel-image stretch-60">
+					 class="carousel-image carousel-website carousel-image-returningracer stretch-60">
 
 				<img src="Images/previous-projects/ReturningRacer/urban-intermediate-horizntalscroll-1.png"
 					 alt=""
-					 class="carousel-image stretch-60">
+					 class="carousel-image carousel-website carousel-image-returningracer stretch-60">
 
 				<img src="Images/previous-projects/ReturningRacer/urban-advanced-vertical-scroll-1.png"
 					 alt=""
-					 class="carousel-image stretch-60">
+					 class="carousel-image carousel-website carousel-image-returningracer stretch-60">
 
 			</div>
 
@@ -3119,6 +3234,13 @@
 			"DOMContentLoaded",
 			function () {
 
+						var carouselControllers = {};
+						window.selectCarouselSlide = function (carouselId, slideClass) {
+							if (carouselControllers[carouselId]) {
+								carouselControllers[carouselId](slideClass);
+							}
+						};
+
 
 				/* =====================================
 				   CAROUSEL FUNCTION
@@ -3138,7 +3260,6 @@
 					if (!carousel) {
 						return;
 					}
-
 
 					var images =
 						carousel.querySelectorAll(
@@ -3163,6 +3284,30 @@
 					var animating = false;
 
 					var timer;
+
+					function updateHeading(image) {
+						var heading = carousel.querySelector("#artwork-covers-text");
+						if (heading) {
+							if (image.classList.contains("carousel-logo-branding")) {
+								heading.innerHTML = '<i class="fa fa-tag" aria-hidden="true"></i>&nbsp;&nbsp;Logo &amp; Branding';
+							} else if (image.classList.contains("carousel-interactive-graphics")) {
+								heading.innerHTML = '<i class="fa fa-hand-pointer-o" aria-hidden="true"></i>&nbsp;&nbsp;Interactive Graphics';
+							} else {
+								heading.innerHTML = '<i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;Magazines';
+							}
+						}
+
+						var websiteHeading = carousel.querySelector("#website-text");
+						if (websiteHeading) {
+							if (image.classList.contains("carousel-image-geocompare")) {
+								websiteHeading.innerHTML = '<i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;- GeoCompare -';
+							} else if (image.classList.contains("carousel-image-returningracer")) {
+								websiteHeading.innerHTML = '<i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;- Returning Racer -';
+							} else {
+								websiteHeading.innerHTML = '<i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;- Harmonia -';
+							}
+						}
+					}
 
 
 					/* =================================
@@ -3344,6 +3489,10 @@
 								oldImage.style.left =
 									"calc(50% + 100%)";
 
+								oldImage.classList.remove(
+									"active"
+								);
+
 
 								newImage.classList.add(
 									"active"
@@ -3352,6 +3501,8 @@
 
 								current =
 									newIndex;
+
+								updateHeading(newImage);
 
 
 								animating =
@@ -3451,6 +3602,35 @@
 					images[0].classList.add(
 						"active"
 					);
+
+					updateHeading(images[0]);
+
+					carouselControllers[carouselId] = function (slideClass) {
+						var targetIndex = -1;
+						for (var imageIndex = 0; imageIndex < images.length; imageIndex++) {
+							if (images[imageIndex].classList.contains(slideClass)) {
+								targetIndex = imageIndex;
+								break;
+							}
+						}
+
+						if (targetIndex >= 0 && window.innerWidth < 768) {
+							for (var mobileIndex = 0; mobileIndex < images.length; mobileIndex++) {
+								images[mobileIndex].style.display = "none";
+								images[mobileIndex].classList.remove("active");
+							}
+
+							images[targetIndex].style.display = "block";
+							images[targetIndex].style.left = "50%";
+							images[targetIndex].classList.add("active");
+							current = targetIndex;
+							updateHeading(images[targetIndex]);
+							restartTimer();
+						} else if (targetIndex >= 0 && targetIndex !== current && !animating) {
+							slide(current, targetIndex, targetIndex > current ? "left" : "right");
+							restartTimer();
+						}
+					};
 
 
 					/* =================================

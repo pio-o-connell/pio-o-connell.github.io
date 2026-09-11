@@ -89,6 +89,36 @@ body {
     color: #ddd;
 }
 
+.submenu-menu {
+    position: relative;
+}
+
+.submenu-link .submenu-arrow {
+    float: right;
+    font-size: 13px;
+    margin-left: 8px;
+}
+
+.submenu-items {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 190px;
+    background-color: #4CAF50;
+    z-index: 1002;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.submenu-menu:hover > .submenu-items,
+.submenu-menu.submenu-open > .submenu-items {
+    display: block;
+}
+
+.submenu-items a {
+    padding-left: 15px;
+}
+
 
 /* =========================================================
    PREVIOUS PROJECTS SUBMENU
@@ -157,6 +187,24 @@ body {
 #geocompare,
 #returning-racer
 {
+    scroll-margin-top: 60px;
+}
+
+#magazine-covers-label,
+#logos-branding-label,
+#interactive-graphics-label,
+#harmonia-label,
+#geocompare-label,
+#returning-racer-label {
+    scroll-margin-top: 60px;
+}
+
+#mobile-magazine-covers,
+#mobile-logos-branding,
+#mobile-interactive-graphics,
+#mobile-harmonia,
+#mobile-geocompare,
+#mobile-returning-racer {
     scroll-margin-top: 60px;
 }
 
@@ -273,6 +321,31 @@ body {
         text-align: left;
         padding: 10px 10px 10px 30px;
         box-sizing: border-box;
+    }
+
+    .topnav.responsive .submenu-menu {
+        width: 100%;
+    }
+
+    .topnav.responsive .submenu-link {
+        padding-left: 30px;
+    }
+
+    .topnav.responsive .submenu-items {
+        position: static;
+        display: none;
+        width: 100%;
+        min-width: 0;
+        box-shadow: none;
+        background-color: #368c36;
+    }
+
+    .topnav.responsive .submenu-menu.submenu-open > .submenu-items {
+        display: block;
+    }
+
+    .topnav.responsive .submenu-items a {
+        padding-left: 55px;
     }
 
     .topnav .previous-projects-menu {
@@ -677,15 +750,6 @@ body {
    PROJECT ICONS
    ========================================================= */
 
-/*.harmonia-icon,
-.geocompare-icon,
-.returning-racer-icon {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    display: block;
-    margin-bottom: 15px;
-}*/
 .harmonia-icon,
 .geocompare-icon,
 .returning-racer-icon {
