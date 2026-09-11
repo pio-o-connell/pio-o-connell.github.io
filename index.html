@@ -167,18 +167,33 @@
 						);
 					}
 
-					var carousel =
-						document.getElementById(carouselId);
+					// var carousel =
+					// 	document.getElementById(carouselId);
 
-					if (carousel) {
+					// if (carousel) {
+					// 	requestAnimationFrame(function () {
+					// 		carousel.scrollIntoView({
+					// 			behavior: "smooth",
+					// 			block: "start"
+					// 		});
+					// 	});
+					// }
+					var targetSection;
+
+					if (carouselId === "artwork-carousel") {
+						targetSection = document.getElementById("graphic-design");
+					} else if (carouselId === "graphics-carousel") {
+						targetSection = document.getElementById("website-design");
+					}
+
+					if (targetSection) {
 						requestAnimationFrame(function () {
-							carousel.scrollIntoView({
+							targetSection.scrollIntoView({
 								behavior: "smooth",
 								block: "start"
 							});
 						});
 					}
-
 					return;
 				}
 
