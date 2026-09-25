@@ -1,7 +1,24 @@
+
+
 /* menu for portfolio */
+
+:root {
+    --primary-font: "Roboto", sans-serif;
+    --secondary-font: "Montserrat", sans-serif;
+}
 
 body {
     margin: 0;
+    font-family: var(--primary-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--secondary-font);
 }
 
 .topnav {
