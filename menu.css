@@ -534,6 +534,31 @@ h6 {
 #experience article header .row > .col-xs-6:last-child {
     margin-left: auto;
 }
+
+/* =========================================================
+   NARROW MOBILE – 40% / 60% FLEX LAYOUT
+   ========================================================= */
+
+@media (max-width: 375px) {
+
+    #edu-ucc .row > .col-xs-6,
+    #edu-cit .row > .col-xs-6,
+    #experience article header .row > .col-xs-6 {
+        width: 40%;
+    }
+
+    #edu-ucc .row > .col-xs-6:last-child,
+    #edu-cit .row > .col-xs-6:last-child,
+    #experience article header .row > .col-xs-6:last-child {
+        width: 60%;
+        margin-left: 0;
+        text-align: right;
+    }
+}
+
+
+
+
 /* =========================================================
    CUSTOM CAROUSELS
    ...
