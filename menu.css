@@ -3,8 +3,10 @@
 /* menu for portfolio */
 
 :root {
-    --primary-font: "Roboto", sans-serif;
-    --secondary-font: "Montserrat", sans-serif;
+  /*  --primary-font: "Roboto", sans-serif;
+    --secondary-font: "Montserrat", sans-serif;*/
+    --primary-font: "Montserrat", sans-serif;
+    --secondary-font: "Roboto", sans-serif;
 }
 
 body {
@@ -489,6 +491,20 @@ h6 {
     color: #666;
 }
 
+
+/* Headings stay in Roboto */
+.skill-set h2,
+.skill-category {
+    font-family: var(--primary-font);   /* Roboto */
+    font-weight: 700;
+}
+
+/* Skill lists switch to Montserrat */
+.skill-list {
+    font-family: var(--secondary-font); /* Montserrat */
+    font-weight: 400; /* or 500 if you want it a bit stronger */
+}
+
 /* Optional – make the decorative progress bars a bit shorter */
 #skillset .progress {
     height: 8px;
@@ -510,6 +526,24 @@ h6 {
     margin-top: 10px;
     margin-bottom: 5px;
 }
+
+/* Qualification titles inside .label */
+/*ducation h4 .label,
+#education .label-default {
+    font-family: var(--secondary-font); 
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+}*/
+/* Qualification / Job titles */
+#education h4,
+#experience h4 {
+    font-family: var(--secondary-font); /* Montserrat */
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
 
 /* =========================================================
    EDUCATION & WORK EXPERIENCE – FLEX ALIGNMENT
