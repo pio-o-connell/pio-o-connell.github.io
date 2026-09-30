@@ -5,7 +5,9 @@
 :root {
   /*  --primary-font: "Roboto", sans-serif;
     --secondary-font: "Montserrat", sans-serif;*/
-    --primary-font: "Montserrat", sans-serif;
+  /*  --primary-font: "Montserrat", sans-serif;
+    --secondary-font: "Roboto", sans-serif;*/
+    --primary-font: "Calibri", sans-serif;
     --secondary-font: "Roboto", sans-serif;
 }
 
