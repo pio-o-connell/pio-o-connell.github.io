@@ -1,5 +1,3 @@
-
-
 /* menu for portfolio */
 
 :root {
@@ -59,6 +57,15 @@ h6 {
 
 .topnav .icon {
     display: none;
+}
+
+
+/* =========================================================
+   MOBILE-ONLY SKILL SET MENU ITEM
+   ========================================================= */
+
+.mobile-skillset {
+    display: none !important;
 }
 
 
@@ -201,6 +208,7 @@ h6 {
 #portfolio,
 #education,
 #experience,
+#skillset,
 #graphic-design,
 #website-design,
 #previous-projects,
@@ -410,6 +418,18 @@ h6 {
         box-sizing: border-box;
     }
 
+
+    /* -----------------------------------------
+       SKILL SET – MOBILE ONLY
+       ----------------------------------------- */
+
+    .topnav.responsive .mobile-skillset {
+        display: block !important;
+        float: none;
+        width: 100%;
+        text-align: left;
+    }
+
 }
 
 
@@ -468,6 +488,7 @@ h6 {
     text-align: left;
 }
 
+
 /* =========================================================
    SKILL LIST (horizontal with | separators)
    ========================================================= */
@@ -495,25 +516,32 @@ h6 {
 
 
 /* Headings stay in Roboto */
+
 .skill-set h2,
 .skill-category {
-    font-family: var(--primary-font);   /* Roboto */
+    font-family: var(--primary-font);
     font-weight: 700;
 }
 
+
 /* Skill lists switch to Montserrat */
+
 .skill-list {
-    font-family: var(--secondary-font); /* Montserrat */
-    font-weight: 400; /* or 500 if you want it a bit stronger */
+    font-family: var(--secondary-font);
+    font-weight: 400;
 }
 
+
 /* Optional – make the decorative progress bars a bit shorter */
+
 #skillset .progress {
     height: 8px;
     margin-bottom: 14px;
 }
 
+
 /* ... existing Skill List styles ... */
+
 
 /* =========================================================
    EDUCATION & WORK EXPERIENCE – COMPANY / INSTITUTION TITLES
@@ -529,6 +557,7 @@ h6 {
     margin-bottom: 5px;
 }
 
+
 /* Qualification titles inside .label */
 /*ducation h4 .label,
 #education .label-default {
@@ -537,10 +566,13 @@ h6 {
     font-weight: 400;
     letter-spacing: 0;
 }*/
+
+
 /* Qualification / Job titles */
+
 #education h4,
 #experience h4 {
-    font-family: var(--secondary-font); /* Montserrat */
+    font-family: var(--secondary-font);
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0;
@@ -571,6 +603,7 @@ h6 {
     margin-left: auto;
 }
 
+
 /* =========================================================
    NARROW MOBILE – 40% / 60% FLEX LAYOUT
    ========================================================= */
@@ -591,8 +624,6 @@ h6 {
         text-align: right;
     }
 }
-
-
 
 
 /* =========================================================
@@ -914,6 +945,7 @@ h6 {
     margin-left: 0px;
 }
 
+
 /* =========================================================
    PROJECT CONTENT
    ========================================================= */
@@ -1027,6 +1059,7 @@ h6 {
     .geocompare-icon {
         content: url("Images/previous-projects/GeoCompare/favicons/android-chrome-512x512.png");
     }
+
     .returning-racer-icon {
         content: url("Images/previous-projects/ReturningRacer/favicons/180x180.png");
     }
@@ -1094,4 +1127,3 @@ h6 {
 #returning-racer details[open] .details-arrow {
     transform: rotate(90deg);
 }
-
