@@ -52,7 +52,8 @@ Live site: [https://pio-o-connell.github.io/](https://pio-o-connell.github.io/)
 
 ## Author
 **Pio O'Connell**  
-- [CV Website](https://pio-o-connell.github.io/CurriculumVitae)  
+- [CV Website](https://pio-o-connell.github.io/)
+- [Source Code](https://https://github.com/pio-o-connell/pio-o-connell.github.io/)
 - [GitHub](https://github.com/pio-o-connell)  
 - [LinkedIn](http://www.linkedin.com/in/pio-o-connell-5a808711)  
 - Email: pio-o-connell@hotmail.com
