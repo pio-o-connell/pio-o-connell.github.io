@@ -1,9 +1,10 @@
 # Pio O'Connell – CV & Portfolio
-
-A responsive static CV and portfolio website.
+A responsive personal website that presents my professional experience, education, technical skills, selected projects and contact details.
+**Live site:** [https://pio-o-connell.github.io/](https://pio-o-connell.github.io/)
 
 ## Overview
-A responsive static CV and portfolio website presenting my professional experience, education, technical skills, projects and contact information.
+Static single-page fully responsive CV / portfolio site built with semantic HTML, Bootstrap 3 and custom CSS/JS for both desktop and mobile. 
+
 
 ## Technologies
 - HTML5
@@ -18,15 +19,17 @@ A responsive static CV and portfolio website presenting my professional experien
 - Fully responsive layout (Bootstrap 3 grid)
 - Mobile-friendly navigation
 - Clear CV sections (Experience, Education, Skills, Projects, Contact)
-- Portfolio / project showcase
+- Portfolio / project showcase with Image carousels 
 - Semantic HTML & accessible navigation
-- Clean, professional design
+- Google analytics
+  
 
 ## Portfolio Projects
-- **Harmonia** – Python/Django application
-- **GeoCompare** – REST Countries API project
-- **Returning Racer** – Static bicycle catalogue
-
+| Project            | Description                          | Tech / Type              |
+|--------------------|--------------------------------------|--------------------------|
+| **Harmonia**       | Full-stack web application           | Python / Django          |
+| **GeoCompare**     | Country comparison tool              | REST Countries API       |
+| **Returning Racer**| Static bicycle catalogue             | HTML / CSS / JS          |
 ## Responsive Design
 The website uses Bootstrap 3 responsive breakpoints (`xs`, `sm`, `md`, `lg`) to deliver optimised layouts for both desktop and mobile devices.
 
