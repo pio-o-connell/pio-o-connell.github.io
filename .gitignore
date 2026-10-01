@@ -1,0 +1,11 @@
+# Ignore a specific file
+README-1.md
+jquery-1.11.3.min
+
+
+# Ignore a whole folder
+.vscode/
+old-cvs/
+
+# Common hidden files to ignore
+.DS_Store
