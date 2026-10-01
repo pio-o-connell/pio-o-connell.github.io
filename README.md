@@ -51,5 +51,5 @@ Live site: [https://pio-o-connell.github.io/](https://pio-o-connell.github.io/)
 **Pio O'Connell**  
 - [CV Website](https://pio-o-connell.github.io/CurriculumVitae)  
 - [GitHub](https://github.com/pio-o-connell)  
-- [LinkedIn](https://linkedin.com/in/your-profile)  
+- [LinkedIn](http://www.linkedin.com/in/pio-o-connell-5a808711)  
 - Email: pio-o-connell@hotmail.com
