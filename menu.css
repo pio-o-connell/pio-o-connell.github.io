@@ -570,15 +570,112 @@ h6 {
 
 /* Qualification / Job titles */
 
-#education h4,
+/* #education h4,
 #experience h4 {
     font-family: var(--secondary-font);
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0;
+} */
+
+/* =========================================================
+   EDUCATION – TWO-LINE DEGREE BADGES
+   ========================================================= */
+
+/* #education h4.course-ucc,
+#education h4.course-mtu {
+    margin-top: 10px;
+    margin-bottom: 14px;
+    font-family: var(--secondary-font);
+    font-size: inherit;
+    font-weight: normal;
 }
 
 
+/* Badge container */
+
+/* #education .degree-badge {
+    display: inline-block;
+    background-color: #4a4a4a;
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 12px 20px;
+    line-height: 1.3;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* Degree – first line */
+
+/* #education .degree-badge .degree {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+} */
+
+
+/* Specialisation – second line */
+
+/* #education .degree-badge .specialisation {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 400;
+    opacity: 0.95;
+} */ */ */
+/* =========================================================
+   EDUCATION – DEGREE BADGES
+   Degree and specialisation displayed on the same line
+   ========================================================= */
+
+#education h4.course-ucc,
+#education h4.course-mtu {
+    margin-top: 10px;
+    margin-bottom: 14px;
+    font-family: var(--secondary-font);
+    font-size: inherit;
+    font-weight: normal;
+}
+
+
+/* Badge container */
+
+#education .degree-badge {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+ /*   background-color: #4a4a4a;*/
+  /*  background-color: #666666;*/
+    background-color:#777;
+    color: #ffffff;
+    border-radius: 12px;
+  /*  padding: 10px 18px;*/
+    padding: 8px 14px;
+    line-height: 1.3;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* Degree */
+
+#education .degree-badge .degree {
+    display: inline;
+    font-size: 1.2rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+/* Specialisation */
+
+#education .degree-badge .specialisation {
+    display: inline;
+    font-size: 0.95rem;
+    font-weight: 400;
+    opacity: 0.95;
+}
 /* =========================================================
    EDUCATION & WORK EXPERIENCE – FLEX ALIGNMENT
    Align institution/company name and dates horizontally
@@ -1019,7 +1116,7 @@ h6 {
    RESPONSIVE PROJECT ICONS
    ========================================================= */
 
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
 
     #harmonia,
     #geocompare,
@@ -1042,8 +1139,92 @@ h6 {
         content: url("Images/previous-projects/ReturningRacer/favicons/180x180.png");
     }
 
-}
+    
 
+} */
+
+/* @media screen and (max-width: 767px) {
+
+    #harmonia,
+    #geocompare,
+    #returning-racer {
+        padding: 20px;
+    }
+
+
+    .harmonia-icon {
+        content: url("Images/previous-projects/Harmonia/part-two/favicons/android-chrome-192x192.png");
+    }
+
+
+    .geocompare-icon {
+        content: url("Images/previous-projects/GeoCompare/favicons/android-chrome-192x192.png");
+    }
+
+
+    .returning-racer-icon {
+        content: url("Images/previous-projects/ReturningRacer/favicons/180x180.png");
+    }
+
+
+    /* =========================================================
+       EDUCATION – MOBILE DEGREE BADGES
+       ========================================================= */
+
+    /* #education .degree-badge {
+        max-width: 100%;
+    }
+
+    #education .degree-badge .degree {
+        font-size: 1.15rem;
+    }
+
+    #education .degree-badge .specialisation {
+        font-size: 0.9rem;
+    } */
+
+@media screen and (max-width: 767px) {
+
+    #harmonia,
+    #geocompare,
+    #returning-racer {
+        padding: 20px;
+    }
+
+    .harmonia-icon {
+        content: url("Images/previous-projects/Harmonia/part-two/favicons/android-chrome-192x192.png");
+    }
+
+    .geocompare-icon {
+        content: url("Images/previous-projects/GeoCompare/favicons/android-chrome-192x192.png");
+    }
+
+    .returning-racer-icon {
+        content: url("Images/previous-projects/ReturningRacer/favicons/180x180.png");
+    }
+
+    /* =========================================================
+       EDUCATION – MOBILE DEGREE BADGES
+       ========================================================= */
+
+    #education .degree-badge {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 4px 8px;
+        max-width: 100%;
+    }
+
+    #education .degree-badge .degree {
+        font-size: 1.1rem;
+        white-space: nowrap;
+    }
+
+    #education .degree-badge .specialisation {
+        font-size: 0.9rem;
+    }
+
+}
 
 /* =========================================================
    TABLET
