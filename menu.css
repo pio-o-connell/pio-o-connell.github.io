@@ -630,7 +630,8 @@ h6 {
    ========================================================= */
 
 #education h4.course-ucc,
-#education h4.course-mtu {
+#education h4.course-mtu,
+#experience h4.job-title{
     margin-top: 10px;
     margin-bottom: 14px;
     font-family: var(--secondary-font);
@@ -641,22 +642,49 @@ h6 {
 
 /* Badge container */
 
-#education .degree-badge {
+/* #education .degree-badge,
+#experience .job-title-badge,
+#experience h4 .label 
+ {
     display: inline-flex;
     align-items: baseline;
     gap: 10px;
  /*   background-color: #4a4a4a;*/
   /*  background-color: #666666;*/
-    background-color:#777;
+  /*  background-color:#777;
     color: #ffffff;
     border-radius: 12px;
-  /*  padding: 10px 18px;*/
+
+    padding: 8px 14px;
+    line-height: 1.3;
+    max-width: 100%;
+    box-sizing: border-box;
+} */
+/* Badge container */
+
+#education .degree-badge,
+#experience .job-title-badge {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+    background-color: #777;
+    color: #ffffff;
+    border-radius: 12px;
     padding: 8px 14px;
     line-height: 1.3;
     max-width: 100%;
     box-sizing: border-box;
 }
 
+/* =========================================================
+   EXPERIENCE – JOB TITLE BADGES
+   ========================================================= */
+
+#experience h4 .label {
+    font-family: var(--secondary-font);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
 
 /* Degree */
 
@@ -667,6 +695,19 @@ h6 {
     white-space: nowrap;
 }
 
+#experience .job-title-badge .job-role {
+    display: inline;
+    font-size: 1.2rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+#experience .job-title-badge .job-specialisation {
+    display: inline;
+    font-size: 0.95rem;
+    font-weight: 400;
+    opacity: 0.95;
+}
 
 /* Specialisation */
 
@@ -1207,7 +1248,8 @@ h6 {
        EDUCATION – MOBILE DEGREE BADGES
        ========================================================= */
 
-    #education .degree-badge {
+    #education .degree-badge,
+    #experience .job-title-badge {
         display: inline-flex;
         flex-wrap: wrap;
         align-items: center;
@@ -1215,12 +1257,14 @@ h6 {
         max-width: 100%;
     }
 
-    #education .degree-badge .degree {
+    #education .degree-badge .degree,
+    #experience .job-title-badge .job-role{
         font-size: 1.1rem;
         white-space: nowrap;
     }
 
-    #education .degree-badge .specialisation {
+    #education .degree-badge .specialisation,
+    #experience .job-title-badge .job-specialisation {
         font-size: 0.9rem;
     }
 
