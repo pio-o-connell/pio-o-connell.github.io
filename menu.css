@@ -1307,7 +1307,6 @@ h6 {
         content: url("Images/previous-projects/GeoCompare/favicons/android-chrome-512x512.png");
     }
 
-
     .returning-racer-icon {
         content: url("Images/previous-projects/ReturningRacer/favicons/original.png");
     }
@@ -1351,4 +1350,53 @@ h6 {
 #geocompare details[open] .details-arrow,
 #returning-racer details[open] .details-arrow {
     transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   APPLE OS EXPERIENCE
+   ========================================================= */
+
+#Apple-OS {
+    opacity: 0.6;
+    margin-top: 15px;
+    padding: 10px 50px 10px 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   APPLE OS EXPERIENCE – MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 767px) {
+
+    #apple {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #Apple-OS {
+        float: none;
+        width: 92%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px 15px;
+    }
+}
+
+/* =========================================================
+   APPLE OS EXPERIENCE – TABLET
+   ========================================================= */
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+
+    #Apple-OS {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
